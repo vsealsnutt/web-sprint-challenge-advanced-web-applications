@@ -9,6 +9,10 @@ export default function ArticleForm(props) {
   const { postArticle, updateArticle, setCurrentArticleId, currentArticleId, articles } = props;
 
   useEffect(() => {
+    setValues(initialFormValues);
+  }, [])
+
+  useEffect(() => {
     if (currentArticleId) {
       const currentArticle = articles.filter(art => art.article_id === currentArticleId);
       setValues(currentArticle[0]);
